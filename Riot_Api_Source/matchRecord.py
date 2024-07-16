@@ -38,10 +38,10 @@ class MatchRecord:
             if champ not in self.winlossChamp:
                 self.winlossChamp[champ] = {'Win': 0, 'Loss': 0}
 
-                if isWin:
-                    self.winlossChamp[champ]['Win'] += 1
-                else:
-                    self.winlossChamp[champ]['Loss'] += 1
+            if isWin:
+                self.winlossChamp[champ]['Win'] += 1
+            else:
+                self.winlossChamp[champ]['Loss'] += 1
 
 
          
