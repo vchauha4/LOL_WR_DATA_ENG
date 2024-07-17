@@ -9,14 +9,19 @@ API_KEY=os.getenv("API_KEY")
 
 @dataclass(frozen=False,order=True)
 class User:
+    summonerName: str
+    summonerTag: str
     puuid : str = None
     id: str = None
     accountId: str = None
     summonerLevel: int = None
-    
 
-    def getPUUID(self,SummonerName,SummonerTag):
-        resp=requests.get(f'https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{SummonerName}/{SummonerTag}?api_key='+API_KEY)
+    def __post_init__(self):
+        self.getPUUID()
+        self.getUserInfo()
+
+    def getPUUID(self):
+        resp=requests.get(f'https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{self.summonerName}/{self.summonerTag}?api_key='+API_KEY)
         jsonResp= resp.json()
         self.puuid= jsonResp['puuid']
     
@@ -30,10 +35,7 @@ class User:
 
 
 
-user=User()
-
-user.getPUUID("LuxxyLux","7857")
-user.getUserInfo()
+user=User(summonerName="LuxxyLux",summonerTag="7857")
 
 print(user)
 
