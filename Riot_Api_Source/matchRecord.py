@@ -20,6 +20,7 @@ class MatchRecord:
         self.getMatches()
         self.getMatchId()     
         self.winrate_champ()
+        print(self.winlossChamp)
 
 
     def getMatches(self, type=None, num_games=92):
