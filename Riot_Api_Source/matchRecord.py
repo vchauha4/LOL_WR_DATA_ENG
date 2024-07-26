@@ -19,7 +19,7 @@ class MatchRecord:
         print(f"Retrieving Win Rate per Champion for {user.summonerName}#{user.summonerTag}:")
         self.getMatches()
         self.getMatchId()     
-      
+        self.winrate_champ()
         print(self.winlossChamp)
 
 
@@ -50,7 +50,11 @@ class MatchRecord:
             else:
                 self.winlossChamp[champ]['Loss'] += 1
 
-    
+    def winrate_champ(self):
+        for champ in self.winlossChamp:
+            self.win_rate_champ[champ]=round((self.winlossChamp[champ]['Win']/(self.winlossChamp[champ]['Win']+self.winlossChamp[champ]['Loss']))*100,2)
+
+
 
 user=User(summonerName="LuxxyLux",summonerTag="7857")
 match=MatchRecord(user=user)
