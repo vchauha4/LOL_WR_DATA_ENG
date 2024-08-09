@@ -64,6 +64,6 @@ while datetime.now()<end_time:
     except Exception as e:
         logging.error(f'Error at skip value {skip}: {e}')
         break
-    time.sleep(121)
+    time.sleep(130)
 
 logging.info(f'Program stopped at skip value: {skip}')
