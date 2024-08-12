@@ -26,6 +26,8 @@ def user_info(summonerId):
 
     if response.status_code != 200:
         print("ERROR with ID:",summonerId)
+        logging.info("ERROR with ID:",summonerId)
+
     else:
         response=response.json()
     return response
@@ -54,7 +56,7 @@ def get_PUUID(skip=100):
 
 
 end_time= datetime.now()+timedelta(hours=23, minutes=40)
-skip=19700
+skip=37200
 
 while datetime.now()<end_time:
     try:
