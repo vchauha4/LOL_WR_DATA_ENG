@@ -1,0 +1,4 @@
+2024-08-11 21:26:26,852 - Error at skip value 37200: 'Response' object has no attribute 'get'
+2024-08-11 21:26:26,852 - Program stopped at skip value: 37200
+2024-08-11 21:27:31,269 - Error at skip value 37202: 'Response' object has no attribute 'get'
+2024-08-11 21:27:31,269 - Program stopped at skip value: 37202
