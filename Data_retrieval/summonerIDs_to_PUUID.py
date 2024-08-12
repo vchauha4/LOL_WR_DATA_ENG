@@ -56,7 +56,7 @@ def get_PUUID(skip=100):
 
 
 end_time= datetime.now()+timedelta(hours=23, minutes=40)
-skip=37200
+skip=49100
 
 while datetime.now()<end_time:
     try:
